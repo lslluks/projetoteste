@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/_template-medico.xhtml">
+	<ui:define name="content">
+		<div class="row jumbotron">
+			<h2 class="text-center">Cadastro de Prontuário</h2>
+			<br />
+
+			<h:form id="medico" class="text-center">
+				<div class="row">
+					<p:messages autoUpdate="true" />
+					<p:growl autoUpdate="true" />
+					
+					<div class="col-md-4 form-group">
+
+						<p:outputLabel value="Diagnostico Hipótese " for="diagHipotese" />
+						<p:inputTextarea id="diagHipotese" rows="10" cols="33"
+							value="#{prontuarioBean.hipoteseDiagnostico}" />
+					</div>
+					<div class="col-md-4 form-group">
+
+						<p:outputLabel value="Hipótese Definitiva"
+							for="hipoteseDefinitivo" />
+						<p:inputTextarea id="hipoteseDefinitivo" rows="10" cols="33"
+							value="#{prontuarioBean.hipoteseDefinitivo}" />
+					</div>
+					<div class="col-md-4 form-group">
+
+						<p:outputLabel value="Tratamento" for="tratamento" />
+						<p:inputTextarea id="tratamento" rows="10" cols="33"
+							value="#{prontuarioBean.tratamento}" />
+					</div>
+
+					<br />
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<h:commandButton value="Cadastrar"
+							actionListener="#{prontuarioBean.cadastrar}" update="medico"
+							styleClass="btn btn-success" />
+						<h:commandButton value="Limpar" type="reset"
+							styleClass="btn btn-danger" style="margin-left:20px;" />
+					</div>
+				</div>
+			</h:form>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/_template-medico.xhtml">
+	<ui:define name="content">
+		<div class="container body-content">
+
+			<div class="col-md-1"></div>
+			<div>
+				<h3>Agenda</h3>
+				<p:growl autoUpdate="true" />
+				<h:form>
+
+					<!-- LISTA DE AGENDAMENTOS -->
+					<p:dataTable value="#{listaConsultaBean.lista}" var="item"
+						id="tabela" sortMode="multiple">
+						<p:column headerText="Paciente">
+							<h:outputText value="#{item.paciente.nome}">
+							</h:outputText>
+						</p:column>
+
+						<p:column headerText="Data da Consulta" sortBy="#{item.data.time}">
+							<h:outputText value="#{item.data.time}">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+						</p:column>
+
+						<p:column headerText="Hora">
+							<h:outputText value="#{item.hora}">
+								<f:convertDateTime pattern="HH:mm" />
+							</h:outputText>
+						</p:column>
+						<p:column>
+							<!-- EXCLUIR CONSULTA -->
+							<p:commandButton icon="ui-icon-trash"
+								onclick="PF('confirm').show()">
+								<f:setPropertyActionListener value="#{item.codigo}"
+									target="#{listaConsultaBean.codigo}" />
+							</p:commandButton>
+
+							<!--  Criar Log  -->
+
+							<p:commandButton icon="fa fa-plus"
+								action="medico-consulta-log">
+								<f:setPropertyActionListener value="#{item.codigo}"
+									target="#{logBean.id}" />
+							</p:commandButton>
+
+						</p:column>
+					</p:dataTable>
+
+					<p:confirmDialog header="Confirmação"
+						message="Deseja excluir a Consulta?" widgetVar="confirm">
+
+						<p:commandButton value="Sim"
+							actionListener="#{listaConsultaBean.excluir}"
+							oncomplete="PF('confirm').hide()" update="tabela" />
+
+						<p:commandButton value="Não" onclick="PF('confirm').hide()"
+							type="button" />
+					</p:confirmDialog>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

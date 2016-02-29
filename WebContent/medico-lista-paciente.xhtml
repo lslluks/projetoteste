@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/_template-medico.xhtml">
+	<ui:define name="content">
+	
+		<br />
+		<br />
+
+		<div class="container body-content">
+			<div class="col-md-1"></div>
+			<h:form>
+				<div>
+					<h:panelGrid columns="3">
+						<p:autoComplete id="busca" value="#{listaPacienteBean.nomeBusca}"
+							completeMethod="#{listaPacienteBean.completarNome}"
+							placeholder="Nome Paciente" />
+						<p:commandButton value="Buscar"
+							actionListener="#{listaPacienteBean.buscar}" update="tabela"
+							style="margin-left:10px;" />
+					</h:panelGrid>
+				</div>
+				
+				<br />
+				<br />
+				
+				<p:dataTable id="tabela" var="p" value="#{listaPacienteBean.lista}"
+					sortMode="multiple">
+					<p:column headerText="Código" sortBy="#{p.codigo}">
+						#{p.codigo}
+					</p:column>
+					<p:column headerText="Nome" sortBy="#{p.nome}">
+						#{p.nome}
+					</p:column>
+					<p:column headerText="CPF" sortBy="#{p.cpf}">
+						#{p.cpf}
+					</p:column>
+					<p:column headerText="Convênio" sortBy="#{p.convenio}">
+						#{p.convenio}
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

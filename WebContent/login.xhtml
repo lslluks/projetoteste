@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/_template-cadastro.xhtml">
+	<ui:define name="content">
+	
+		<section id="login" style="margin-left: -15px; margin-right: -15px; margin-top: -20px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4 text-center">
+					<h:form>
+						<p:growl autoUpdate="true" />
+						<h1>Login</h1>
+						<div class="form-group">
+							<p:inputText id="login" required="true" placeholder="Login*"
+								requiredMessage="Login obrigatório" value="#{loginBean.login}" />
+						</div>
+						<div class="form-group">
+							<p:password placeholder="Senha*" required="true"
+								value="#{loginBean.senha}" requiredMessage="Senha obrigatória." />
+						</div>
+						<h:commandButton style="background-color: #FED136;
+background-image:
+none;
+height: 50px;
+width: 100px;
+border-bottom-color:
+#FED136;
+border-bottom-left-radius:
+3px;
+border-bottom-right-radius:
+3px;
+border-bottom-style:
+solid;
+border-bottom-width:
+1px;
+border-image-outset:
+0 0 0 0;
+border-image-repeat:
+stretch stretch;
+border-image-slice:
+100% 100% 100% 100%;
+border-image-source:
+none;
+border-image-width:
+1 1 1 1;
+border-left-color:
+#FED136;
+border-left-style:
+solid;
+border-left-width:
+1px;
+border-right-color:
+#FED136;
+border-right-style:
+solid;
+border-right-width:
+1px;
+border-top-color:
+#FED136;
+border-top-left-radius:
+3px;
+border-top-right-radius:
+3px;
+border-top-style:
+solid;
+border-top-width:
+1px;
+box-sizing:
+border-box;
+color:
+#FFF;
+cursor:
+pointer;
+display:
+inline-block;
+font-family:
+Montserrat,''Helvetica Neue',Helvetica,Arial,sans-serif;
+font-size:
+18px;
+font-weight:
+700;
+line-height:
+25.7167px;
+margin-bottom:
+0px;
+outline-color:
+#FFF;
+outline-style:
+none;
+outline-width:
+0px;
+padding-bottom:
+20px;
+padding-left:
+40px;
+padding-right:
+40px;
+padding-top:
+20px;
+text-align:
+center;
+text-decoration:
+none;
+text-decoration-color:
+#FFF;
+text-decoration-line:
+none;
+text-decoration-style:
+solid;
+text-transform:
+uppercase;
+vertical-align:
+middle;
+white-space:
+nowrap;
+-moz-border-bottom-colors:
+none;
+-moz-border-left-colors:
+none;
+-moz-border-right-colors:
+none;
+-moz-border-top-colors:
+none;
+-moz-user-select:
+none;" value="Entrar" action="#{loginBean.logar}" />
+						<br />
+						<br />
+						<a class="page-scroll" href="index.xhtml#services"
+							style="color: #fff">Não tem conta? Cadastre-se!</a>
+					</h:form>
+				</div>
+			</div>
+			<br />
+		</div>
+		</section>
+		
+	</ui:define>
+</ui:composition>
+</html>

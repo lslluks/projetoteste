@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>HDEV - Login</title>
+
+	<link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="resources/css/agency.css" rel="stylesheet" />
+	<link href="resources/font-awesome/css/font-awesome.min.css"
+		rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+		rel="stylesheet" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+		rel='stylesheet' type='text/css' />
+	<link
+		href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+		rel='stylesheet' type='text/css' />
+	<link
+		href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+		rel='stylesheet' type='text/css' />
+</h:head>
+
+<h:body>
+
+	<div id="content">
+		<!-- Nav BAR -->
+		<nav class="navbar navbar-default navbar-shrink">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				
+				<a class="navbar-brand page-scroll" href="medico-perfil.xhtml">
+					<h:outputText value="Dr. #{sessionScope.usuario.nome}" />
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><h:link outcome="medico-lista-consulta.xhtml">
+							<h:outputText value="Consultas" />
+						</h:link></li>
+					<li><h:link outcome="medico-lista-paciente.xhtml">
+							<h:outputText value="Pacientes" />
+						</h:link></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><h:form rendered="#{sessionScope.usuario != null}">
+							<h:commandButton value="Logout" action="#{loginBean.sair}"
+								class="logoutM" />
+						</h:form></li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+
+	</div>
+
+	<div id="content">
+		<ui:insert name="content">
+		</ui:insert>
+
+		<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<span class="copyright">Copyright HDevs 2015</span>
+				</div>
+				<div class="col-md-4">
+					<ul class="list-inline social-buttons">
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul class="list-inline quicklinks">
+						<li><a href="#">Política de Privacidade</a></li>
+						<li><a href="#">Termos de Uso</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</footer>
+	</div>
+
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/agency.js"></script>
+
+</h:body>
+</html>

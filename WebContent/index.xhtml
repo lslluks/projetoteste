@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+<ui:composition template="/WEB-INF/_template.xhtml">
+	<ui:define name="content">
+
+		<!-- Header -->
+		<header>
+			<div class="container">
+				<div class="intro-text">
+					<div class="intro-lead-in">Bem Vindo ao HNurse!</div>
+					<div class="intro-heading">O consultório em suas mãos</div>
+					<a href="#services" class="page-scroll btn btn-xl">Saiba mais</a>
+				</div>
+			</div>
+		</header>
+
+
+		<section id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2 class="section-heading">Cadastre-se</h2>
+						<h3 class="section-subheading text-muted">Siga as instruções</h3>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-md-4">
+						<a href="paciente-cadastro.xhtml"> <span
+							class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x text-primary"></i> <i
+								class="fa fa-user fa-stack-1x fa-inverse"></i>
+						</span>
+						</a>
+						<h4 class="service-heading">Paciente</h4>
+						<p class="text-muted">Entre na área de paciente, aqui você
+							poderá se cadastrar e agendar suas consultas médicas.</p>
+					</div>
+					<div class="col-md-4">
+						<a href="medico-cadastro.xhtml"> <span class="fa-stack fa-4x">
+								<i class="fa fa-circle fa-stack-2x text-primary"></i> <i
+								class="fa fa-briefcase fa-stack-1x fa-inverse"></i>
+						</span>
+						</a>
+						<h4 class="service-heading">Credenciado</h4>
+						<p class="text-muted">Aqui você poderá se cadastrar como
+							credenciado, gerenciar seu consultório e ter total controle sob
+							ele.</p>
+					</div>
+					<div class="col-md-4">
+						<span class="fa-stack fa-4x"> <i
+							class="fa fa-circle fa-stack-2x text-primary"></i> <i
+							class="fa fa-lock fa-stack-1x fa-inverse"></i>
+						</span>
+
+						<h4 class="service-heading">Em Breve...</h4>
+						<p class="text-muted"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2 class="section-heading">Sobre</h2>
+						<h3 class="section-subheading text-muted">O consultório em
+							suas mãos.</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<ul class="timeline">
+							<li>
+								<div class="timeline-image">
+									<img class="img-circle img-responsive"
+										src="resources/img/about/fiap_about.jpg" alt="" />
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h4>2014-2015</h4>
+										<h4 class="subheading">O Início</h4>
+									</div>
+									<div class="timeline-body">
+										<p class="text-muted">Em um projeto de faculdade, surgiu a
+											ideia de eliminar a necessidade de papéis e secretárias para
+											gerenciar o consultório médico.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted">
+								<div class="timeline-image">
+									<img class="img-circle img-responsive"
+										src="resources/img/about/am_about.jpg" alt="" />
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h4></h4>
+										<h4 class="subheading">O AM</h4>
+									</div>
+									<div class="timeline-body">
+										<p class="text-muted">Com o AM, o projeto deu-se início a
+											fase de desenvolvimento, saindo apenas das ideias.</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="timeline-image">
+									<img class="img-circle img-responsive"
+										src="resources/img/about/entrega_about.jpg" alt="" />
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h4>Outubro</h4>
+										<h4 class="subheading">A Entrega</h4>
+									</div>
+									<div class="timeline-body">
+										<p class="text-muted">Chega o dia em que a data de entrega
+											se transforma no ponto inicial do melhor sistema de
+											gerencimento de consultórios médicos.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted">
+								<div class="timeline-image">
+									<img class="img-circle img-responsive"
+										src="resources/img/about/dominio_about.jpg" alt="" />
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h4>Janeiro 2016</h4>
+										<h4 class="subheading">Domínio do Mercado</h4>
+									</div>
+									<div class="timeline-body">
+										<p class="text-muted">O HNurse já domina o mercado e assim
+											concede aos seus clientes a melhor segurança e organização
+											para seu ambiente de trabalho.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted"><a href="login.xhtml">
+									<div class="timeline-image">
+										<h4>
+											Utilize já <br />o <br />HNurse!
+										</h4>
+									</div>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Team Section -->
+		<section id="team" class="bg-light-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2 class="section-heading">A Equipe</h2>
+						<h3 class="section-subheading text-muted"></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="team-member">
+							<img src="resources/img/team/lucas.jpg"
+								class="img-responsive img-circle" alt="" />
+							<h4>Lucas Lima</h4>
+							<p class="text-muted">Lead Developer</p>
+							<ul class="list-inline social-buttons">
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href="https://www.facebook.com/lucas.s.lima.1"><i
+										class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				
+			
+	
+
+				
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 text-center">
+						<p class="large text-muted">Trabalhamos para você ter o melhor
+							aproveitamento do Sistema.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Clients Aside -->
+		<aside class="clients">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<a href="#"> <img src="" class="img-responsive img-centered"
+							alt="" />
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="#"> <img src="" class="img-responsive img-centered"
+							alt="" />
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="#"> <img src="" class="img-responsive img-centered"
+							alt="" />
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="#"> <img src="" class="img-responsive img-centered"
+							alt="" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</aside>
+
+		<section id="local">
+    <div class="container body-content text-center">
+        <h1 class="text-center" id="txtBolder">LOCAL</h1>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 text-center" style="background-color:#DCDCDC;">
+                <br />
+                <br />
+                <h3>Consultório Vila Formosa</h3>
+                <p> SÃO PAULO, SP</p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <p>Avenida Renata, 824 - Chácara Belenzinho</p>
+                <p>São Paulo - SP</p>
+                <br />
+                <br />
+            </div>
+            <div class="col-md-4">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7457545320326!2d-46.54228119999999!3d-23.577573099999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5db97a82d9d1%3A0xe406d40787c97b46!2sAv.+Renata%2C+824+-+Ch%C3%A1cara+Belenzinho%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1441539638909" width="570" height="306" frameborder="0" style="border:0" />
+            </div>
+        </div>
+    </div>
+</section>
+
+		<!-- Contact Section -->
+		<section id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2 class="section-heading">Entre em Contato!</h2>
+						<h3 class="section-subheading text-muted">Atendimento e
+							Suporte ao cliente.</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form name="sentMessage" id="contactForm">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<h:inputText type="text" class="form-control"
+											placeholder="Nome *" id="name" required="true"
+											requiredMessage="Por favor insira seu nome." />
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group">
+										<h:inputText type="email" class="form-control"
+											placeholder="Email *" id="email" required="true"
+											requiredMessage="Email obrigatório" />
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group">
+										<h:inputText type="tel" class="form-control"
+											placeholder="Telefone *" id="phone" required="true"
+											requiredMessage="Por favor insira seu telefone." />
+										<p class="help-block text-danger"></p>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<h:inputTextarea class="form-control" placeholder="Mensagem *"
+											id="message" required="true"
+											requiredMessage="Mensagem obrigatória." />
+										<p class="help-block text-danger"></p>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="col-lg-12 text-center">
+									<div id="success"></div>
+									<h:commandButton value="Enviar" class="btn btn-xl">Enviar</h:commandButton>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</ui:define>
+</ui:composition>
+
+</html>

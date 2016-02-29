@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/_template-cadastro.xhtml">
+	<ui:define name="content">
+		<div class="row jumbotron">
+			<h2 class="text-center">
+				Cadastro de Médico<br /> <small> utilize já nosso sistema!</small>
+			</h2>
+			<br />
+
+			<h:form id="medico" class="text-center">
+				<div class="row">
+					<p:messages autoUpdate="true" />
+					<p:growl autoUpdate="true" />
+
+					<div class="col-md-4">
+						<!-- DADOS PESSOAIS -->
+
+						<p:panelGrid columns="2" cellpadding="5">
+							<p:outputLabel value="Nome" for="nome" />
+							<p:inputText id="nome" value="#{medicoBean.medico.nome}"
+								styleClass="form-control" required="true"
+								requiredMessage="Nome Obrigatório" />
+
+							<p:outputLabel value="CRM" for="crm" />
+							<p:inputMask id="crm" mask="99.999"
+								value="#{medicoBean.medico.crm}" styleClass="form-control"
+								required="true" requiredMessage="CRM Obrigatório"
+								placeholder="12.111" />
+
+
+							<p:outputLabel value="Tipo do Médico" />
+							<h:selectOneMenu id="tipo" value="#{medicoBean.medico.tipo}"
+								effect="fold">
+								<f:selectItem itemLabel="Selecione" itemValue="" />
+								<f:selectItem itemLabel="Otorrinolaringologista"
+									itemValue="Otorrinolaringologista" />
+								<f:selectItem itemLabel="Pediatra" itemValue="Pediatra" />
+								<f:selectItem itemLabel="Cardiologista"
+									itemValue="Cardiologista" />
+								<f:selectItem itemLabel="Ortopedista" itemValue="Ortopedista" />
+								<f:selectItem itemLabel="Dermatologista"
+									itemValue="Dermatologista" />
+							</h:selectOneMenu>
+
+							<p:outputLabel value="RG" for="rg" />
+							<p:inputMask id="rg" value="#{medicoBean.medico.rg}"
+								mask="99.999.999-9" styleClass="form-control" required="true"
+								requiredMessage="RG Obrigatório" placeholder="12.321.456-8" />
+
+							<p:outputLabel value="Telefone" for="telefone" />
+							<p:inputMask id="telefone" value="#{medicoBean.medico.telefone}"
+								styleClass="form-control" required="true"
+								requiredMessage="Telefone Obrigatório" mask="(99) 99999-9999"
+								placeholder="(11) 99784-9354" />
+
+							<p:outputLabel value="Data de nascimento" for="nasc" />
+							<p:calendar id="nasc"
+								value="#{medicoBean.medico.dtaNascimento.time}"
+								pattern="dd/MM/yyyy"
+								maxdate="#{pacienteBean.paciente.dtaNascimento.time}" mask="99/99/9999"/>
+
+							<p:outputLabel for="sexo" value="Sexo" />
+							<h:selectOneRadio id="sexo" value="#{medicoBean.medico.sexo}">
+								<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+								<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+								<f:selectItem itemLabel="Outro" itemValue="Outro" />
+							</h:selectOneRadio>
+						</p:panelGrid>
+					</div>
+
+					<div class="col-md-4">
+						<p:panelGrid columns="2" cellpadding="5">
+
+							<p:outputLabel value="Login" for="login" />
+							<p:inputText id="login" value="#{medicoBean.medico.login}"
+								styleClass="form-control" required="true"
+								requiredMessage="Login Inválido" />
+
+							<p:outputLabel value="Senha" for="pass" />
+							<p:password id="pass" value="#{medicoBean.medico.senha}"
+								required="true" requiredMessage="É necessário uma senha!"
+								placeholder="*******" feedback="true" match="repass" />
+
+							<p:outputLabel value="Repita Senha" for="repass" />
+							<p:password id="repass" value="#{medicoBean.medico.senha}"
+								required="true" requiredMessage="É necessário uma senha!"
+								placeholder="*******" />
+
+						</p:panelGrid>
+					</div>
+
+					<div class="col-md-4">
+						<p:panelGrid columns="2" cellpadding="5">
+
+							<p:outputLabel value="Logradouro" for="logradouro" />
+							<p:inputText id="logradouro"
+								value="#{medicoBean.medico.endereco.logradouro}"
+								styleClass="form-control"
+								placeholder="Avenida Dr. Eduardo Cothing" />
+
+							<p:outputLabel value="Número" for="numero" />
+							<p:spinner id="numero"
+								value="#{medicoBean.medico.endereco.numero}"
+								  min="0"/>
+
+							<p:outputLabel value="Complemento" for="comp" />
+							<p:inputText id="comp"
+								value="#{medicoBean.medico.endereco.complemento}"
+								styleClass="form-control" placeholder="27 B" />
+
+							<p:outputLabel value="Bairro" for="bairro" />
+							<p:inputText id="bairro"
+								value="#{medicoBean.medico.endereco.bairro.nome}"
+								styleClass="form-control" placeholder="Vila Formosa" />
+
+							<p:outputLabel value="Cidade" for="cidade" />
+							<p:inputText id="cidade"
+								value="#{medicoBean.medico.endereco.bairro.cidade.nome}"
+								styleClass="form-control" placeholder="São Paulo" />
+
+							<h:outputLabel value="Estado" for="estado" />
+							<h:selectOneMenu id="estado"
+								value="#{medicoBean.medico.endereco.bairro.cidade.estado.nome}">
+								<f:selectItem itemLabel="Selecione" itemValue="" />
+								<f:selectItem itemLabel="AC" itemValue="AC" />
+								<f:selectItem itemLabel="AL" itemValue="AL" />
+								<f:selectItem itemLabel="AP" itemValue="AP" />
+								<f:selectItem itemLabel="AM" itemValue="AM" />
+								<f:selectItem itemLabel="BA" itemValue="BA" />
+								<f:selectItem itemLabel="CE" itemValue="CE" />
+								<f:selectItem itemLabel="DF" itemValue="DF" />
+								<f:selectItem itemLabel="ES" itemValue="ES" />
+								<f:selectItem itemLabel="GO" itemValue="GO" />
+								<f:selectItem itemLabel="MA" itemValue="MA" />
+								<f:selectItem itemLabel="MT" itemValue="MT" />
+								<f:selectItem itemLabel="MS" itemValue="MS" />
+								<f:selectItem itemLabel="MG" itemValue="MG" />
+								<f:selectItem itemLabel="PA" itemValue="PA" />
+								<f:selectItem itemLabel="PB" itemValue="PB" />
+								<f:selectItem itemLabel="PR" itemValue="PR" />
+								<f:selectItem itemLabel="PE" itemValue="PE" />
+								<f:selectItem itemLabel="PI" itemValue="PI" />
+								<f:selectItem itemLabel="RR" itemValue="RR" />
+								<f:selectItem itemLabel="RO" itemValue="RO" />
+								<f:selectItem itemLabel="RJ" itemValue="RJ" />
+								<f:selectItem itemLabel="RN" itemValue="RN" />
+								<f:selectItem itemLabel="RS" itemValue="RS" />
+								<f:selectItem itemLabel="SC" itemValue="SC" />
+								<f:selectItem itemLabel="SP" itemValue="SP" />
+								<f:selectItem itemLabel="SE" itemValue="SE" />
+								<f:selectItem itemLabel="TO" itemValue="TO" />
+							</h:selectOneMenu>
+						</p:panelGrid>
+					</div>
+
+				</div>
+
+				<br />
+
+				<div class="col-md-3">
+					<h:commandButton value="Cadastrar"
+						actionListener="#{medicoBean.cadastrar}" update="medico"
+						styleClass="btn btn-success" />
+					<h:commandButton value="Limpar" type="reset"
+						styleClass="btn btn-danger" style="margin-left:20px;" />
+				</div>
+
+			</h:form>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

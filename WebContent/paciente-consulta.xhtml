@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/_template-paciente.xhtml">
+	<ui:define name="content">
+
+		<div class="container jumbotron">
+			<h2 class="text-center">
+				Marque já sua Consulta!<br />
+			</h2>
+			<br />
+
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-3 text-center">
+					<h:form>
+						<p:messages autoUpdate="true" />
+						<p:growl autoUpdate="true" />
+
+						<h:selectOneMenu id="medico" value="#{consultaBean.codigo}">
+							<f:selectItem itemLabel="Selecione o Médico" itemValue="" />
+							<f:selectItems itemLabel="#{medico.tipo} - #{medico.nome}"
+								itemValue="#{medico.codigo}" var="medico"
+								value="#{consultaBean.medicos}" />
+						</h:selectOneMenu>
+
+						<br />
+						<br />
+
+						<p:calendar value="#{consultaBean.consulta.data}"
+							pattern="dd/MM/yyyy" mode="inline" disabledWeekends="true"
+							mindate="#{consultaBean.consulta.agendamento.data.time}" />
+
+						<br />
+						<p:calendar value="#{consultaBean.consulta.hora}" pattern="HH:mm"
+							timeOnly="true" placeholder="Hora*" minHour="8" maxHour="21" />
+							
+						<br />
+						<br />
+
+						<p:commandButton value="Marcar"
+							actionListener="#{consultaBean.cadastrar}" />
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="WEB-INF/_template-paciente.xhtml">
+
+	<ui:define name="content">
+	<div class="col-md-4"></div>
+		<div class="jumbotron text-center" style="background: url('resources/img/back_perfil.jpg');">
+		<h:form rendered="#{sessionScope.usuario != null}">
+			<h1>Bem Vindo,
+				<h:outputText value="#{sessionScope.usuario.nome}" />!
+			</h1>
+			<h3>Cadastre já sua Consulta !</h3>
+			<p>Escolha o dia e o horário para agendar sua consulta</p>
+		</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

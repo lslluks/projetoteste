@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>HNurse</title>
+	<!-- 	<h:outputStylesheet library="css" name="bootstrap.min.css" /> -->
+	<!-- 	<h:outputStylesheet library="css" name="estilo.css" /> -->
+	<!-- 	<h:outputStylesheet library="css" name="agency.css" /> -->
+
+	<link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="resources/css/agency.css" rel="stylesheet" />
+	<link href="resources/font-awesome/css/font-awesome.min.css"
+		rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+		rel="stylesheet" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+		rel='stylesheet' type='text/css' />
+		
+		<link href="resources/css/estilo.css" rel="stylesheet" />
+		
+	<link
+		href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+		rel='stylesheet' type='text/css' />
+	<link
+		href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+		rel='stylesheet' type='text/css' />
+
+</h:head>
+
+<h:body>
+	<div id="content">
+		<!-- Nav BAR -->
+		<nav class="navbar navbar-default navbar-shrink">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="index.xhtml">HNurse</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="page-scroll" href="login.xhtml">Login</a></li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+
+	</div>
+
+	<div class="container" style="width: 100%;">
+		<ui:insert name="content">
+
+		</ui:insert>
+
+		<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<span class="copyright">Copyright HDevs 2015</span>
+				</div>
+				<div class="col-md-4">
+					<ul class="list-inline social-buttons">
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul class="list-inline quicklinks">
+						<li><a href="#">Política de Privacidade</a></li>
+						<li><a href="#">Termos de Uso</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</footer>
+	</div>
+
+
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/agency.js"></script>
+	
+</h:body>
+</html>

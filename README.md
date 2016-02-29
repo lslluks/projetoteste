@@ -14,7 +14,7 @@ vagrant connect --ssh arctic-armadillo-9264
 
 password : kappa
 
----- Diretorio do projeto na máquina virtual ----------
+---- Diretorio do projeto compartilhado na máquina virtual ----------
 
 C:\ubuntu\.vagrant\machines\default\virtualbox\arquivos
 
@@ -28,4 +28,9 @@ mysql> SOURCE <Diretorio da pasta de employees_db>/load_departments.dump;
 mysql> SOURCE <Diretorio da pasta de employees_db>/load_dept_emp.dump;
 mysql> SOURCE <Diretorio da pasta de employees_db>/load_dept_manager.dump;
 
+----- Caso necessite instalar jdk7 e tomcat7 --------
+Dentro da box.......
+
+sudo apt-get install openjdk-7-jdk
+sudo apt-get install tomcat7
 

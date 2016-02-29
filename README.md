@@ -1,10 +1,31 @@
 # projetoteste
 Teste Estágio
 
+OS - WINDOWS
+
+---- Box Compartilhada do Vagrant -----
+
+
+Imagem Baseada em UBUNTU (ubuntu/trusty64)
+
 name: arctic-armadillo-9264
 
 vagrant connect --ssh arctic-armadillo-9264
 
 password : kappa
 
+---- Diretorio do projeto na máquina virtual ----------
+
 C:\ubuntu\.vagrant\machines\default\virtualbox\arquivos
+
+------ Caso precise popular o banco com dados dos "employees" -------
+
+mysql> SOURCE <Diretorio da pasta de employees_db>/employees.sql;
+mysql> SOURCE <Diretorio da pasta de employees_db>/load_employees.dump;
+mysql> SOURCE <Diretorio da pasta de employees_db>/load_titles.dump;
+mysql> SOURCE <Diretorio da pasta de employees_db>/load_salaries.dump;
+mysql> SOURCE <Diretorio da pasta de employees_db>/load_departments.dump;
+mysql> SOURCE <Diretorio da pasta de employees_db>/load_dept_emp.dump;
+mysql> SOURCE <Diretorio da pasta de employees_db>/load_dept_manager.dump;
+
+

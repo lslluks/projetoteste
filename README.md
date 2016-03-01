@@ -43,3 +43,6 @@ sudo apt-get install openjdk-7-jdk
 
 sudo apt-get install tomcat7
 
+---- Database do projeto ------
+
+Basta utilizar outro login e senha do database, encontrados no arquivo persistence.xml.

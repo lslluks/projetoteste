@@ -8,9 +8,9 @@ OS - WINDOWS
 
 Imagem Baseada em UBUNTU (ubuntu/trusty64)
 
-name: arctic-armadillo-9264
+name: relaxed-chipmunk-4389
 
-vagrant connect --ssh arctic-armadillo-9264
+vagrant connect --ssh relaxed-chipmunk-4389
 
 password : kappa
 
